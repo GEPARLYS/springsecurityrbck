@@ -11,22 +11,31 @@
         pattern 请求的url，
         security=none: 不需要认证，所有人都可以访问
     -->
-    <security:http pattern="/*.jsp" security="none"/>
+<!--    <security:http pattern="/*.jsp" security="none"/>-->
     <security:http pattern="/css/**" security="none"/>
     <security:http pattern="/img/**" security="none"/>
     <security:http pattern="/plugins/**" security="none"/>
+    
     <!--
         auto-config:这个是一个自动配置过滤器(Filter)的属性, 帮我们创建login页面，login认证处理方法
         use-expressions:"是否使用spel表达式"，如果使用表达式：access="hasRole('ROLE_USER')"
     -->
-    <security:http auto-config="true" use-expressions="true">
+    <security:http use-expressions="true">
         <!-- 配置拦截的请求地址，/**代表任何请求地址，access=ROLE_USER，即访问的用户必须有ROLE_USER的角色才可访问
 		ROLE_USER写法，ROLE_自定义,须以ROLE_为前缀
 		-->
 
 
+        <security:intercept-url pattern="/login.jsp" access="permitAll"/>
+        <security:intercept-url pattern="/failer.jsp" access="permitAll"/>
+        <security:intercept-url pattern="/403.jsp" access="permitAll"/>
+
+
+        
 <!--        <security:intercept-url pattern="/index.jsp" access="ROLE_USER"/>-->
+        <security:intercept-url pattern="/index.jsp" access="hasRole('USER')"/>
         <security:intercept-url pattern="/**" access="hasAnyRole('USER','ADMIN')" />
+        
 
         <!--form-login 表单认证
             login-page: 登陆页面

@@ -43,7 +43,7 @@ public class SysUserServiceImpl implements SysUserService {
             List<SysRole> roles = sysUser.getRoles();
             for (SysRole role : roles) {
                 //存入角色
-                authorities.add(new SimpleGrantedAuthority(role.getRoleName()));
+                authorities.add(new SimpleGrantedAuthority(role.getRoleDesc()));
             }
             //<security:intercept-url pattern="/**" access="ROLE_USER" />
             // 创建一个权限信息
@@ -51,7 +51,8 @@ public class SysUserServiceImpl implements SysUserService {
             // {noop}让security不要加密
 
             //创建用户
-            return new User(username,sysUser.getPassword(),authorities);
+           
+            return new User(username, sysUser.getPassword(), authorities);
         }
 
 

@@ -1,0 +1,12 @@
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:29 +0800] "GET / HTTP/1.1" 302 - http-bio-18080-exec-1 95
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:30 +0800] "GET /login.jsp HTTP/1.1" 200 2508 http-bio-18080-exec-3 762
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:38 +0800] "POST /login HTTP/1.1" 200 9885 http-bio-18080-exec-4 1439
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:41 +0800] "GET /user/pageList HTTP/1.1" 200 15989 http-bio-18080-exec-5 574
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:43 +0800] "GET /user/show?id=1 HTTP/1.1" 200 14342 http-bio-18080-exec-6 234
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:47 +0800] "GET /permission/list HTTP/1.1" 200 17329 http-bio-18080-exec-7 180
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:48 +0800] "GET /role/list HTTP/1.1" 200 15135 http-bio-18080-exec-8 147
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:48 +0800] "GET /permission/list HTTP/1.1" 200 17329 http-bio-18080-exec-9 14
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:49 +0800] "GET /log/list HTTP/1.1" 200 16472 http-bio-18080-exec-10 196
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:49 +0800] "GET /plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css HTTP/1.1" 200 12339 http-bio-18080-exec-10 14
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:49 +0800] "GET /plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js HTTP/1.1" 200 39213 http-bio-18080-exec-2 14
+0:0:0:0:0:0:0:1 - - [03/Nov/2025:17:49:51 +0800] "GET /product/pageList HTTP/1.1" 200 19653 http-bio-18080-exec-10 229

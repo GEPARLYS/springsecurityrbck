@@ -24,7 +24,7 @@
 			<li id="admin-index"><a
 				href="${pageContext.request.contextPath}/pages/main.jsp"><i
 					class="fa fa-dashboard"></i> <span>首页</span></a></li>
-			<security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
+			<security:authorize access="hasAnyRole('ADMIN','USER')">
 			<li class="treeview"><a href="#"> <i class="fa fa-cogs"></i>
 					<span>系统管理</span> <span class="pull-right-container"> <i
 						class="fa fa-angle-left pull-right"></i>

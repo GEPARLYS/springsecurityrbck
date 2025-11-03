@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 /**
@@ -18,12 +19,12 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/role") //todo
-@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 public class SysRoleController {
 
     @Autowired
     private SysRoleService sysRoleService;
 
+    @RolesAllowed("ADMIN")
     @RequestMapping("/list")
     public String list(Model model){
         List<SysRole> roleList = sysRoleService.roleList();
