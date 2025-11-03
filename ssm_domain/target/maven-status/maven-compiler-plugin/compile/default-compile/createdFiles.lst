@@ -1,0 +1,6 @@
+com\ssm\domain\Product.class
+com\ssm\domain\SysUser.class
+com\ssm\domain\SysLog.class
+com\ssm\domain\SysPermission.class
+com\ssm\domain\Orders.class
+com\ssm\domain\SysRole.class

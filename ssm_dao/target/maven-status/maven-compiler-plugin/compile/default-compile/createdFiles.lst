@@ -1,0 +1,6 @@
+com\ssm\dao\SysUserDao.class
+com\ssm\dao\SysRoleDao.class
+com\ssm\dao\ProductDao.class
+com\ssm\dao\SysPermissionDao.class
+com\ssm\dao\SysLogDao.class
+com\ssm\dao\OrdersDao.class
