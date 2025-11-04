@@ -12,10 +12,17 @@ import java.util.List;
  * @Version 1.0
  */
 public interface SysUserDao {
-    @Select("select sys_user.*,sys_user_role.roleid roleid from sys_user left join sys_user_role on sys_user.id = sys_user_role.userid where sys_user.username = #{username}")
-    @Results(
-            @Result(property = "roles",column = "roleid",many = @Many(select = "com.ssm.dao.SysRoleDao.getByUserId"))
-    )
+    @Select("select * from sys_user where username = #{username}")
+    @Results({
+            @Result(property = "id", column = "id"),
+            @Result(property = "username", column = "username"),
+            @Result(property = "email", column = "email"),
+            @Result(property = "password", column = "password"),
+            @Result(property = "phoneNum", column = "phoneNum"),
+            @Result(property = "status", column = "status"),
+            @Result(property = "roles", column = "id",
+                    many = @Many(select = "com.ssm.dao.SysRoleDao.getByUserId"))
+    })
     SysUser findByUsername(String username);
 
     @Select("select * from sys_user")

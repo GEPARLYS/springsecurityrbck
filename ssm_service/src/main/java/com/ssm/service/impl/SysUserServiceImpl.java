@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Author j
@@ -35,12 +36,13 @@ public class SysUserServiceImpl implements SysUserService {
 
 
         //登录数据库认证 要求:用户名必须唯一
-        SysUser sysUser = sysUserDao.findByUsername(username);
+        SysUser  sysUser = sysUserDao.findByUsername(username);
         if (sysUser != null){
             //设置假的权限
             List<GrantedAuthority> authorities = new ArrayList<>();
             //获取用户名角色
             List<SysRole> roles = sysUser.getRoles();
+            
                 for (SysRole role : roles) {
                 //存入角色
                 authorities.add(new SimpleGrantedAuthority(role.getRoleDesc())); //TODO 角色名要跟配置相对应
