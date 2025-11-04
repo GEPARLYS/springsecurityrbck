@@ -75,7 +75,7 @@ public class SysUserController {
         StringBuilder stringBuffer = new StringBuilder();
         if (userRoles != null && !userRoles.isEmpty()) {
             for (SysRole userRole : userRoles) {
-                stringBuffer.append(userRole.getRoleName()+"");
+                stringBuffer.append(userRole.getRoleName());
             }
         }
 

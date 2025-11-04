@@ -41,9 +41,9 @@ public class SysUserServiceImpl implements SysUserService {
             List<GrantedAuthority> authorities = new ArrayList<>();
             //获取用户名角色
             List<SysRole> roles = sysUser.getRoles();
-            for (SysRole role : roles) {
+                for (SysRole role : roles) {
                 //存入角色
-                authorities.add(new SimpleGrantedAuthority(role.getRoleDesc()));
+                authorities.add(new SimpleGrantedAuthority(role.getRoleDesc())); //TODO 角色名要跟配置相对应
             }
             //<security:intercept-url pattern="/**" access="ROLE_USER" />
             // 创建一个权限信息

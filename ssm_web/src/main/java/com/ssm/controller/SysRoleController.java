@@ -18,7 +18,7 @@ import java.util.List;
  * @Version 1.0
  */
 @Controller
-@RequestMapping("/role") //todo
+@RequestMapping("/role") 
 public class SysRoleController {
 
     @Autowired

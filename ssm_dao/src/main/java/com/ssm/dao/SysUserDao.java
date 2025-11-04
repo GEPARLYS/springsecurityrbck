@@ -12,9 +12,9 @@ import java.util.List;
  * @Version 1.0
  */
 public interface SysUserDao {
-    @Select("select * from sys_user where username = #{username}")
+    @Select("select sys_user.*,sys_user_role.roleid roleid from sys_user left join sys_user_role on sys_user.id = sys_user_role.userid where sys_user.username = #{username}")
     @Results(
-            @Result(property = "roles",column = "id",many = @Many(select = "com.ssm.dao.SysRoleDao.getByUserId"))
+            @Result(property = "roles",column = "roleid",many = @Many(select = "com.ssm.dao.SysRoleDao.getByUserId"))
     )
     SysUser findByUsername(String username);
 
@@ -29,7 +29,7 @@ public interface SysUserDao {
             id="myResult",// 给result取一个ID
             value={
                     @Result(id = true,column = "id",property = "id"),
-                    @Result(column = "id", property = "roles", many = @Many(select = "com.ssm.dao.SysRoleDao.getByUserId",fetchType = FetchType.LAZY))
+                    @Result(column = "id", property = "roles", many = @Many(select = "com.ssm.dao.SysRoleDao.getByUserIdGetRoleList",fetchType = FetchType.LAZY))
             })
     SysUser getById(Integer id);
 

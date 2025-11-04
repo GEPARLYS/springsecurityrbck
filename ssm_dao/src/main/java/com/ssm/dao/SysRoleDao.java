@@ -21,8 +21,17 @@ public interface SysRoleDao {
 
     @Select("select * from sys_user_role sur,sys_role sr where sur.userid=sr.id and id = #{id}")
     @Results(
-            @Result(property = "permissions",column = "roleid",
+            @Result(property = "permissions",column = "roles",
             many = @Many(select = "com.ssm.dao.SysPermissionDao.getByRoleId",fetchType = FetchType.LAZY))
     )
     List<SysRole> getByUserId(Integer id);
+
+
+
+    @Select("select * from sys_user_role sur,sys_role sr where sur.roleid=sr.id and userid = #{id}")
+    @Results(
+            @Result(property = "permissions",column = "roles",
+                    many = @Many(select = "com.ssm.dao.SysPermissionDao.getByRoleIds",fetchType = FetchType.LAZY))
+    )
+    List<SysRole> getByUserIdGetRoleList(Integer id);
 }
