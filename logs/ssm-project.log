@@ -1628,3 +1628,5 @@ Caused by: java.sql.SQLException: 无法转换为内部表示
 2025-11-04 19:16:20 [http-bio-18080-exec-8] DEBUG addLog:159 - ==>  Preparing: insert into sys_log values(log_seq.nextval,?,?,?,?) 
 2025-11-04 19:16:20 [http-bio-18080-exec-8] DEBUG addLog:159 - ==> Parameters: 2025-11-04 19:16:20.852(Timestamp), admin(String), 0:0:0:0:0:0:0:1(String), After:class com.ssm.controller.SysRoleController.list(String)
 2025-11-04 19:16:20 [http-bio-18080-exec-8] DEBUG addLog:159 - <==    Updates: 1
+2025-11-04 19:18:25 [localhost-startStop-2] INFO  XmlWebApplicationContext:989 - Closing WebApplicationContext for namespace 'springmvc-servlet': startup date [Tue Nov 04 19:12:32 CST 2025]; root of context hierarchy
+2025-11-04 19:18:25 [localhost-startStop-2] INFO  DruidDataSource:1370 - {dataSource-1} closed
